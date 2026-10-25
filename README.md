@@ -5,7 +5,6 @@
 <p align="center">
   <a href="https://www.npmjs.com/package/dsh-ping-me"><img src="https://img.shields.io/npm/v/dsh-ping-me?color=34d399&label=npm" alt="npm version"></a>
   <a href="https://www.npmjs.com/package/dsh-ping-me"><img src="https://img.shields.io/npm/dm/dsh-ping-me?color=34d399" alt="npm downloads"></a>
-  <img src="https://img.shields.io/badge/push-only-34d399" alt="push only">
   <a href="https://ntfy.sh"><img src="https://img.shields.io/badge/via-ntfy-34d399" alt="notifications via ntfy"></a>
   <a href="LICENSE"><img src="https://img.shields.io/github/license/JoblessJoe/dsh-ping-me?color=34d399" alt="MIT license"></a>
 </p>
