@@ -1,0 +1,103 @@
+{
+  "name": "dsh-ping-me",
+  "version": "0.1.0",
+  "description": "Push notifications from DeepSeek Harness (dsh) to your phone via ntfy, one way only: nobody can send anything back into your agents. Turn results, approvals and questions, failures, an optional live heartbeat, and a ping_me tool so automation tasks alert you only when they find a problem.",
+  "icon": "./icon.svg",
+  "homepage": "https://github.com/JoblessJoe/dsh-ping-me#readme",
+  "author": "Johannes Tebbert <info@joblessjoe.com> (https://joblessjoe.com)",
+  "license": "MIT",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "cordis.patch.yml",
+    "SETUP-GUIDE.md",
+    "icon.svg"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-settings",
+        "@deepseek-ai/dsh-client-ui-plugin-manager",
+        "@deepseek-ai/dsh-api-remotes"
+      ]
+    },
+    "compatibility": {
+      "dsh": ">=0.2.0-rc.2"
+    }
+  },
+  "dshhub": {
+    "schemaVersion": 1,
+    "displayName": "Ping Me",
+    "summary": "Phone notifications via ntfy, push only: turn results, approvals, questions, failures, optional live heartbeat, and alerts from automation tasks.",
+    "categories": [
+      "Notifications",
+      "Automation"
+    ],
+    "surfaces": [
+      "host",
+      "web"
+    ],
+    "capabilities": {
+      "provides": []
+    },
+    "compatibility": {
+      "dsh": ">=0.2.0-rc.2",
+      "node": ">=20"
+    },
+    "permissions": {
+      "network": [
+        "your ntfy server (default ntfy.sh)"
+      ]
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JoblessJoe/dsh-ping-me.git"
+  },
+  "bugs": {
+    "url": "https://github.com/JoblessJoe/dsh-ping-me/issues"
+  },
+  "keywords": [
+    "deepseek",
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "client-plugin",
+    "agent-tool",
+    "dsh-tool",
+    "ntfy",
+    "push",
+    "notification",
+    "phone",
+    "mobile",
+    "alert",
+    "heartbeat",
+    "schedule",
+    "automation",
+    "推送",
+    "dsh插件"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/schemastery": "*"
+  },
+  "dependencies": {
+    "qrcode": "^1.5.4"
+  },
+  "scripts": {
+    "test": "node test.js",
+    "release": "git pull origin main && npm publish"
+  }
+}

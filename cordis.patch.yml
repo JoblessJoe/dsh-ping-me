@@ -1,0 +1,4 @@
+# dsh-ping-me bundle mount (new plugin -> `insert:`). Set it up in Plugins → dsh-ping-me.
+- insert:
+    - id: dsh-ping-me
+      name: 'dsh-ping-me'
