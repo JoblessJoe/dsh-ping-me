@@ -1,6 +1,6 @@
 {
   "name": "dsh-ping-me",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Push notifications from DeepSeek Harness (dsh) to your phone via ntfy, one way only: nobody can send anything back into your agents. Turn results, approvals and questions, failures, an optional live heartbeat, and a ping_me tool so automation tasks alert you only when they find a problem.",
   "icon": "./icon.svg",
   "homepage": "https://github.com/JoblessJoe/dsh-ping-me#readme",
