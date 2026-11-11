@@ -32,7 +32,7 @@ npx @deepseek-ai/dsh plugin --profile web add dsh-ping-me
 | ⚠️ **Automation alert** | an automation task called `ping_me` because it found a problem | high |
 | 🟢 **Fix the login bug · running bash · 2m 10s** (optional) | live status while a turn runs, updated in place, then turns into the ✅ result | silent |
 
-- **On/off in the chat bar:** a small green **Ping** switch sits next to access control. Off mutes every push, `ping_me` included.
+- **On/off in the chat bar:** a small green **Notify** switch sits next to access control. Off mutes every push, `ping_me` included.
 - **Open dsh button:** every notification has one. It only opens dsh in your browser, and you still need your dsh login. The address is detected from the browser you use dsh in.
 - **Labelled by session:** notifications carry the session's title, so you know which agent it is.
 - **Subagents stay quiet:** their parent reports.
