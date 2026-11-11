@@ -117,6 +117,13 @@ const child = { id: 'child', header: { parentSession: 'session-1' } }
 ev('turn/start', { turn: 1 }, child); ev('turn/end', { reason: { kind: 'completed' } }, child); await flush()
 assert.strictEqual(calls.length, 0)
 
+// master switch off (chat bar): nothing pushes, ping_me refuses
+vals.enabled = false
+ev('turn/start', { turn: 6 }); ev('approval/asked', { toolName: 'bash' })
+ev('turn/end', { reason: { kind: 'error', error: { message: 'x' } } }); await flush()
+assert.strictEqual(calls.length, 0)
+vals.enabled = true
+
 // automation run: the "all fine" reply stays quiet by default; ping_me works only here
 await assert.rejects(tool.execute({ title: 'x', message: 'y' }, { agent: { session: { id: 'session-1' } } }), /only for turns started by an automation task/)
 prompt('schedule'); ev('turn/start', { turn: 4 })
@@ -134,6 +141,9 @@ vals.maxPingsPerHour = 1
 await assert.rejects(tool.execute({ title: 'again', message: 'y' }, { agent: { session: { id: 'session-1' } } }), /hourly cap/)
 const log = readFileSync(join(process.env.DSH_HOME, 'ping-me', 'log.jsonl'), 'utf8').trim().split('\n').map(JSON.parse)
 assert.deepStrictEqual(log.filter(e => e.what === 'ping').map(e => e.result), ['refused', 'sent', 'refused'])
+vals.enabled = false
+await assert.rejects(tool.execute({ title: 'x', message: 'y' }, { agent: { session: { id: 'session-1' } } }), /turned notifications off/)
+vals.enabled = true
 
 // heartbeat: status updated in place, silent while healthy, becomes the result at turn end
 vals.heartbeat = true
