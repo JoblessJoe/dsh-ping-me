@@ -49,6 +49,7 @@ You are helping a user set up **dsh-ping-me**. It pushes dsh notifications to th
 
 Work through these in order. Ask about one at a time.
 
+0. **Notify switch.** The small green switch in the chat bar, next to access control, must be on. Off mutes every push, but the card's test button still works.
 1. **Card → Recent notifications** (bottom of the card). A failed send shows its reason there.
    - **`429`:** ntfy.sh's daily limit is reached. Wait, or use your own server.
    - **`401` / `403`:** the server needs an access token. The user enters it under *Own ntfy server / access token*.

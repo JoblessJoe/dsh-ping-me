@@ -12,6 +12,8 @@ A [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) (dsh) plug
 
 **Automation tasks can alert you, too.** A `ping_me` tool lets an agent run by dsh's Schedule ping you only when it actually found a problem. A daily "all fine" stays quiet.
 
+**One switch to mute it.** A green **Notify** switch in the chat bar turns every push on or off.
+
 **Push only.** The plugin publishes and never subscribes. Nothing anyone sends to your topic can ever reach your agents.
 
 ```bash
@@ -32,7 +34,10 @@ npx @deepseek-ai/dsh plugin --profile web add dsh-ping-me
 | ⚠️ **Automation alert** | an automation task called `ping_me` because it found a problem | high |
 | 🟢 **Fix the login bug · running bash · 2m 10s** (optional) | live status while a turn runs, updated in place, then turns into the ✅ result | silent |
 
-- **On/off in the chat bar:** a small green **Notify** switch sits next to access control. Off mutes every push, `ping_me` included.
+- **On/off in the chat bar:** a small green **Notify** switch sits next to access control. Off mutes every push, `ping_me` included. The card's test button still works.
+
+  <img src="https://raw.githubusercontent.com/JoblessJoe/dsh-ping-me/main/.github/assets/chat-bar.png" alt="The dsh chat bar with the green Notify switch between access control and the model picker" width="620">
+
 - **Open dsh button:** every notification has one. It only opens dsh in your browser, and you still need your dsh login. The address is detected from the browser you use dsh in.
 - **Labelled by session:** notifications carry the session's title, so you know which agent it is.
 - **Subagents stay quiet:** their parent reports.
